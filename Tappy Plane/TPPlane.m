@@ -25,6 +25,10 @@ static NSString* const kKeyPlaneAnimation = @"PlaneAnimation";
     self = [super initWithImageNamed:@"planeBlue1@2x"];
     if (self) {
         
+        // Setup physics body.
+        self.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:self.size.width * 0.5];
+        
+        
         // Init array to hold animation actions.
         _planeAnimations = [[NSMutableArray alloc] init];
         
