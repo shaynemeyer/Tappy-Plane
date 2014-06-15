@@ -24,6 +24,7 @@
 		D9119B92194E189C00357B9F /* Tappy_PlaneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D9119B91194E189C00357B9F /* Tappy_PlaneTests.m */; };
 		D9119B9D194E18F000357B9F /* TPGameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = D9119B9C194E18F000357B9F /* TPGameScene.m */; };
 		D9119BB8194E210400357B9F /* Planes.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D9119BB7194E210400357B9F /* Planes.atlas */; };
+		D9119BBB194E22C700357B9F /* TPPlane.m in Sources */ = {isa = PBXBuildFile; fileRef = D9119BBA194E22C700357B9F /* TPPlane.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,8 @@
 		D9119B9B194E18F000357B9F /* TPGameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPGameScene.h; sourceTree = "<group>"; };
 		D9119B9C194E18F000357B9F /* TPGameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPGameScene.m; sourceTree = "<group>"; };
 		D9119BB7194E210400357B9F /* Planes.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Planes.atlas; sourceTree = "<group>"; };
+		D9119BB9194E22C700357B9F /* TPPlane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPPlane.h; sourceTree = "<group>"; };
+		D9119BBA194E22C700357B9F /* TPPlane.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPPlane.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +134,8 @@
 				D9119B9C194E18F000357B9F /* TPGameScene.m */,
 				D9119B7E194E189B00357B9F /* Images.xcassets */,
 				D9119B68194E189B00357B9F /* Supporting Files */,
+				D9119BB9194E22C700357B9F /* TPPlane.h */,
+				D9119BBA194E22C700357B9F /* TPPlane.m */,
 			);
 			path = "Tappy Plane";
 			sourceTree = "<group>";
@@ -266,6 +271,7 @@
 				D9119B78194E189B00357B9F /* TPViewController.m in Sources */,
 				D9119B72194E189B00357B9F /* TPAppDelegate.m in Sources */,
 				D9119B6E194E189B00357B9F /* main.m in Sources */,
+				D9119BBB194E22C700357B9F /* TPPlane.m in Sources */,
 				D9119B9D194E18F000357B9F /* TPGameScene.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

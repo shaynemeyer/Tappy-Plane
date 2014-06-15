@@ -7,6 +7,14 @@
 //
 
 #import "TPGameScene.h"
+#import "TPPlane.h"
+
+@interface TPGameScene ()
+
+@property (nonatomic) TPPlane *player;
+@property (nonatomic) SKNode *world;
+
+@end
 
 @implementation TPGameScene
 
@@ -14,22 +22,13 @@
 {
     if (self = [super initWithSize:size]) {
         
-        SKSpriteNode *plane1 = [SKSpriteNode spriteNodeWithImageNamed:@"planeBlue1@2x"];
-        plane1.position = CGPointMake(50, 50);
-        [self addChild:plane1];
+        // Setup world.
+        _world = [SKNode node];
+        [self addChild:_world];
         
-        SKSpriteNode *plane2 = [SKSpriteNode spriteNodeWithImageNamed:@"planeRed1@2x"];
-        plane2.position = CGPointMake(100, 50);
-        [self addChild:plane2];
-        
-        SKSpriteNode *plane3 = [SKSpriteNode spriteNodeWithImageNamed:@"planeGreen1@2x"];
-        plane3.position = CGPointMake(150, 50);
-        [self addChild:plane3];
-        
-        SKSpriteNode *plane4 = [SKSpriteNode spriteNodeWithImageNamed:@"planeYellow1@2x"];
-        plane4.position = CGPointMake(200, 50);
-        [self addChild:plane4];
-        
+        _player = [[TPPlane alloc] init];
+        _player.position = CGPointMake(self.size.width * 0.5, self.size.height * 0.5);
+        [_world addChild:_player];      
         
     }
     return self;
