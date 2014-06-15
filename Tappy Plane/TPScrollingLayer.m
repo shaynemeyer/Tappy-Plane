@@ -33,7 +33,8 @@
 {
     self.rightMostTile = nil;
     [self enumerateChildNodesWithName:@"Tile" usingBlock:^(SKNode *node, BOOL *stop) {
-        node.position = CGPointMake(self.rightMostTile.position.x + self.rightMostTile.size.width, node.position.y);
+        node.position = CGPointMake(self.rightMostTile.position.x +
+                                    self.rightMostTile.size.width, node.position.y);
         self.rightMostTile = (SKSpriteNode*)node;
     }];
 }
@@ -42,7 +43,18 @@
 {
     [super updateWithTimeElapsed:timeElapsed];
     
-    
+    if (self.scrolling && self.horizontalScrollSpeed < 0 && self.scene) {
+        [self enumerateChildNodesWithName:@"Tile" usingBlock:^(SKNode *node, BOOL *stop) {
+            CGPoint nodePositionInScene = [self convertPoint:node.position toNode:self.scene];
+            
+            if (nodePositionInScene.x + node.frame.size.width <
+                -self.scene.size.width * self.scene.anchorPoint.x) {
+                node.position = CGPointMake(self.rightMostTile.position.x +
+                                            self.rightMostTile.size.width, node.position.y);
+                self.rightMostTile = (SKSpriteNode*)node;
+            }
+        }];
+    }
 }
 
 @end
