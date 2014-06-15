@@ -28,6 +28,7 @@
 		D9119BBD194E245D00357B9F /* PlaneAnimations.plist in Resources */ = {isa = PBXBuildFile; fileRef = D9119BBC194E245D00357B9F /* PlaneAnimations.plist */; };
 		D9119BC2194E354900357B9F /* PlanePuffTrail.sks in Resources */ = {isa = PBXBuildFile; fileRef = D9119BC0194E354900357B9F /* PlanePuffTrail.sks */; };
 		D9119BC3194E354900357B9F /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = D9119BC1194E354900357B9F /* spark.png */; };
+		D9119BC6194E488F00357B9F /* TPScrollingNode.m in Sources */ = {isa = PBXBuildFile; fileRef = D9119BC5194E488F00357B9F /* TPScrollingNode.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,8 @@
 		D9119BBC194E245D00357B9F /* PlaneAnimations.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PlaneAnimations.plist; sourceTree = "<group>"; };
 		D9119BC0194E354900357B9F /* PlanePuffTrail.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PlanePuffTrail.sks; sourceTree = "<group>"; };
 		D9119BC1194E354900357B9F /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
+		D9119BC4194E488F00357B9F /* TPScrollingNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPScrollingNode.h; sourceTree = "<group>"; };
+		D9119BC5194E488F00357B9F /* TPScrollingNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPScrollingNode.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +147,8 @@
 				D9119BBA194E22C700357B9F /* TPPlane.m */,
 				D9119B7E194E189B00357B9F /* Images.xcassets */,
 				D9119B68194E189B00357B9F /* Supporting Files */,
+				D9119BC4194E488F00357B9F /* TPScrollingNode.h */,
+				D9119BC5194E488F00357B9F /* TPScrollingNode.m */,
 			);
 			path = "Tappy Plane";
 			sourceTree = "<group>";
@@ -301,6 +306,7 @@
 				D9119B6E194E189B00357B9F /* main.m in Sources */,
 				D9119BBB194E22C700357B9F /* TPPlane.m in Sources */,
 				D9119B9D194E18F000357B9F /* TPGameScene.m in Sources */,
+				D9119BC6194E488F00357B9F /* TPScrollingNode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -507,6 +513,7 @@
 				D9119B97194E189C00357B9F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D9119B98194E189C00357B9F /* Build configuration list for PBXNativeTarget "Tappy PlaneTests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +522,7 @@
 				D9119B9A194E189C00357B9F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
