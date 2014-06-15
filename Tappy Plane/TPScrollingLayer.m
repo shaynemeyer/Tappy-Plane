@@ -8,6 +8,12 @@
 
 #import "TPScrollingLayer.h"
 
+@interface  TPScrollingLayer()
+
+@property (nonatomic) SKSpriteNode *rightMostTile;
+
+@end
+
 @implementation TPScrollingLayer
 
 -(id)initWithTiles:(NSArray*)tileSpriteNodes
@@ -25,6 +31,17 @@
 
 -(void)layoutTiles
 {
+    self.rightMostTile = nil;
+    [self enumerateChildNodesWithName:@"Tile" usingBlock:^(SKNode *node, BOOL *stop) {
+        node.position = CGPointMake(self.rightMostTile.position.x + self.rightMostTile.size.width, node.position.y);
+        self.rightMostTile = (SKSpriteNode*)node;
+    }];
+}
+
+-(void)updateWithTimeElapsed:(NSTimeInterval)timeElapsed
+{
+    [super updateWithTimeElapsed:timeElapsed];
+    
     
 }
 
