@@ -26,6 +26,8 @@
 		D9119BB8194E210400357B9F /* Planes.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D9119BB7194E210400357B9F /* Planes.atlas */; };
 		D9119BBB194E22C700357B9F /* TPPlane.m in Sources */ = {isa = PBXBuildFile; fileRef = D9119BBA194E22C700357B9F /* TPPlane.m */; };
 		D9119BBD194E245D00357B9F /* PlaneAnimations.plist in Resources */ = {isa = PBXBuildFile; fileRef = D9119BBC194E245D00357B9F /* PlaneAnimations.plist */; };
+		D9119BC2194E354900357B9F /* PlanePuffTrail.sks in Resources */ = {isa = PBXBuildFile; fileRef = D9119BC0194E354900357B9F /* PlanePuffTrail.sks */; };
+		D9119BC3194E354900357B9F /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = D9119BC1194E354900357B9F /* spark.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +67,8 @@
 		D9119BB9194E22C700357B9F /* TPPlane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPPlane.h; sourceTree = "<group>"; };
 		D9119BBA194E22C700357B9F /* TPPlane.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPPlane.m; sourceTree = "<group>"; };
 		D9119BBC194E245D00357B9F /* PlaneAnimations.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PlaneAnimations.plist; sourceTree = "<group>"; };
+		D9119BC0194E354900357B9F /* PlanePuffTrail.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PlanePuffTrail.sks; sourceTree = "<group>"; };
+		D9119BC1194E354900357B9F /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +130,7 @@
 		D9119B67194E189B00357B9F /* Tappy Plane */ = {
 			isa = PBXGroup;
 			children = (
+				D9119BBF194E34FF00357B9F /* Particle Effects */,
 				D9119BBE194E262200357B9F /* Resources */,
 				D9119BB7194E210400357B9F /* Planes.atlas */,
 				D9119B70194E189B00357B9F /* TPAppDelegate.h */,
@@ -178,6 +183,15 @@
 				D9119BBC194E245D00357B9F /* PlaneAnimations.plist */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		D9119BBF194E34FF00357B9F /* Particle Effects */ = {
+			isa = PBXGroup;
+			children = (
+				D9119BC0194E354900357B9F /* PlanePuffTrail.sks */,
+				D9119BC1194E354900357B9F /* spark.png */,
+			);
+			name = "Particle Effects";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,6 +273,8 @@
 			files = (
 				D9119B6C194E189B00357B9F /* InfoPlist.strings in Resources */,
 				D9119BBD194E245D00357B9F /* PlaneAnimations.plist in Resources */,
+				D9119BC2194E354900357B9F /* PlanePuffTrail.sks in Resources */,
+				D9119BC3194E354900357B9F /* spark.png in Resources */,
 				D9119B7F194E189B00357B9F /* Images.xcassets in Resources */,
 				D9119BB8194E210400357B9F /* Planes.atlas in Resources */,
 				D9119B75194E189B00357B9F /* Main.storyboard in Resources */,
