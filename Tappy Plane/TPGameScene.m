@@ -17,6 +17,8 @@
 @property (nonatomic) TPScrollingLayer *background;
 @end
 
+static const CGFloat kMinFPS = 10.0 / 60.0;
+
 @implementation TPGameScene
 
 - (id)initWithSize:(CGSize)size
@@ -73,7 +75,16 @@
 
 -(void)update:(NSTimeInterval)currentTime
 {
+    static NSTimeInterval lastCallTime;
+    NSTimeInterval timeElapsed = currentTime - lastCallTime;
+    if (timeElapsed > kMinFPS) {
+        timeElapsed = kMinFPS;
+    }
+    lastCallTime = currentTime;
+    
     [self.player update];
+    [self.background updateWithTimeElapsed:timeElapsed];
+    
 }
 
 @end
