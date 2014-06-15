@@ -27,7 +27,7 @@ static NSString* const kKeyPlaneAnimation = @"PlaneAnimation";
         
         // Setup physics body.
         self.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:self.size.width * 0.5];
-        
+        self.physicsBody.mass = 0.08;
         
         // Init array to hold animation actions.
         _planeAnimations = [[NSMutableArray alloc] init];
@@ -60,7 +60,7 @@ static NSString* const kKeyPlaneAnimation = @"PlaneAnimation";
         [self actionForKey:kKeyPlaneAnimation].speed = 1;
         self.puffTrailEmitter.particleBirthRate = self.puffTrailBirthRate;
     } else {
-        [self actionForKey:kKeyPlaneAnimation]. speed = 0;
+        [self actionForKey:kKeyPlaneAnimation].speed = 0;
         self.puffTrailEmitter.particleBirthRate = 0;
     }
 }
@@ -93,6 +93,13 @@ static NSString* const kKeyPlaneAnimation = @"PlaneAnimation";
                                                           timePerFrame:frameTime
                                                                 resize:NO
                                                                restore:NO]];
+}
+
+-(void)update
+{
+    if (self.accelerating) {
+        [self.physicsBody applyForce:CGVectorMake(0.0, 100)];
+    }
 }
 
 @end

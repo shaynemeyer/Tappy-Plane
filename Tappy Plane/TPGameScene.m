@@ -42,7 +42,6 @@
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     for (UITouch *touch in touches) {
-        self.player.engineRunning = !self.player.engineRunning;
         _player.physicsBody.affectedByGravity = YES;
         self.player.accelerating = YES;
     }
@@ -54,6 +53,11 @@
         
         self.player.accelerating = NO;
     }
+}
+
+-(void)update:(NSTimeInterval)currentTime
+{
+    [self.player update];
 }
 
 @end

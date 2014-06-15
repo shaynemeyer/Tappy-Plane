@@ -14,5 +14,6 @@
 @property (nonatomic) BOOL accelerating;
 
 -(void)setRandomColor;
+-(void)update;
 
 @end
