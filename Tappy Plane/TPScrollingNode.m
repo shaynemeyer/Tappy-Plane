@@ -13,6 +13,9 @@
 
 -(void)updateWithTimeElapsed:(NSTimeInterval)timeElapsed
 {
-    self.position = CGPointMake(self.position.x + (self.horizontalScrollSpeed * timeElapsed), self.position.y);
+    if (self.scrolling) {
+        self.position = CGPointMake(self.position.x + (self.horizontalScrollSpeed * timeElapsed), self.position.y);  
+    }
+    
 }
 @end
