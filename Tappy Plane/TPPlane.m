@@ -14,6 +14,8 @@
 
 @end
 
+static NSString* const kKeyPlaneAnimation = @"PlaneAnimation";
+
 @implementation TPPlane
 
 - (id)init
@@ -37,9 +39,25 @@
     return self;
 }
 
+-(void)setEngineRunning:(BOOL)engineRunning
+{
+    _engineRunning = engineRunning;
+    if (engineRunning) {
+        [self actionForKey:kKeyPlaneAnimation].speed = 1;
+    } else {
+        [self actionForKey:kKeyPlaneAnimation]. speed = 0;
+    }
+}
+
 -(void)setRandomColor
 {
-    [self runAction:[self.planeAnimations objectAtIndex:arc4random_uniform(self.planeAnimations.count)]];
+    [self removeActionForKey:kKeyPlaneAnimation];
+    SKAction *animation = [self.planeAnimations objectAtIndex:arc4random_uniform(self.planeAnimations.count)];
+    [self runAction:animation withKey:kKeyPlaneAnimation];
+    
+    if (!self.engineRunning) {
+        [self actionForKey:kKeyPlaneAnimation].speed = 0;
+    }
 }
 
 -(SKAction*)animationFromArray:(NSArray*)textureNames withDuration:(CGFloat)duration

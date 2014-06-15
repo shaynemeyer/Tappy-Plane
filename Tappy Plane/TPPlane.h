@@ -10,6 +10,7 @@
 
 @interface TPPlane : SKSpriteNode
 
+@property (nonatomic) BOOL engineRunning;
 -(void)setRandomColor;
 
 @end
