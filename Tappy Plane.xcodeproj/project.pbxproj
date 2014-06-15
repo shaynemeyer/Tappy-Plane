@@ -23,18 +23,7 @@
 		D9119B90194E189C00357B9F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D9119B8E194E189C00357B9F /* InfoPlist.strings */; };
 		D9119B92194E189C00357B9F /* Tappy_PlaneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D9119B91194E189C00357B9F /* Tappy_PlaneTests.m */; };
 		D9119B9D194E18F000357B9F /* TPGameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = D9119B9C194E18F000357B9F /* TPGameScene.m */; };
-		D9119BAB194E1F1000357B9F /* planeBlue1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D9119B9F194E1F1000357B9F /* planeBlue1@2x.png */; };
-		D9119BAC194E1F1000357B9F /* planeBlue2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D9119BA0194E1F1000357B9F /* planeBlue2@2x.png */; };
-		D9119BAD194E1F1000357B9F /* planeBlue3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D9119BA1194E1F1000357B9F /* planeBlue3@2x.png */; };
-		D9119BAE194E1F1000357B9F /* planeGreen1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D9119BA2194E1F1000357B9F /* planeGreen1@2x.png */; };
-		D9119BAF194E1F1000357B9F /* planeGreen2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D9119BA3194E1F1000357B9F /* planeGreen2@2x.png */; };
-		D9119BB0194E1F1000357B9F /* planeGreen3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D9119BA4194E1F1000357B9F /* planeGreen3@2x.png */; };
-		D9119BB1194E1F1000357B9F /* planeRed1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D9119BA5194E1F1000357B9F /* planeRed1@2x.png */; };
-		D9119BB2194E1F1000357B9F /* planeRed2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D9119BA6194E1F1000357B9F /* planeRed2@2x.png */; };
-		D9119BB3194E1F1000357B9F /* planeRed3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D9119BA7194E1F1000357B9F /* planeRed3@2x.png */; };
-		D9119BB4194E1F1000357B9F /* planeYellow1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D9119BA8194E1F1000357B9F /* planeYellow1@2x.png */; };
-		D9119BB5194E1F1000357B9F /* planeYellow2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D9119BA9194E1F1000357B9F /* planeYellow2@2x.png */; };
-		D9119BB6194E1F1000357B9F /* planeYellow3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D9119BAA194E1F1000357B9F /* planeYellow3@2x.png */; };
+		D9119BB8194E210400357B9F /* Planes.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D9119BB7194E210400357B9F /* Planes.atlas */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,18 +59,7 @@
 		D9119B91194E189C00357B9F /* Tappy_PlaneTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tappy_PlaneTests.m; sourceTree = "<group>"; };
 		D9119B9B194E18F000357B9F /* TPGameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPGameScene.h; sourceTree = "<group>"; };
 		D9119B9C194E18F000357B9F /* TPGameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPGameScene.m; sourceTree = "<group>"; };
-		D9119B9F194E1F1000357B9F /* planeBlue1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "planeBlue1@2x.png"; sourceTree = "<group>"; };
-		D9119BA0194E1F1000357B9F /* planeBlue2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "planeBlue2@2x.png"; sourceTree = "<group>"; };
-		D9119BA1194E1F1000357B9F /* planeBlue3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "planeBlue3@2x.png"; sourceTree = "<group>"; };
-		D9119BA2194E1F1000357B9F /* planeGreen1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "planeGreen1@2x.png"; sourceTree = "<group>"; };
-		D9119BA3194E1F1000357B9F /* planeGreen2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "planeGreen2@2x.png"; sourceTree = "<group>"; };
-		D9119BA4194E1F1000357B9F /* planeGreen3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "planeGreen3@2x.png"; sourceTree = "<group>"; };
-		D9119BA5194E1F1000357B9F /* planeRed1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "planeRed1@2x.png"; sourceTree = "<group>"; };
-		D9119BA6194E1F1000357B9F /* planeRed2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "planeRed2@2x.png"; sourceTree = "<group>"; };
-		D9119BA7194E1F1000357B9F /* planeRed3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "planeRed3@2x.png"; sourceTree = "<group>"; };
-		D9119BA8194E1F1000357B9F /* planeYellow1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "planeYellow1@2x.png"; sourceTree = "<group>"; };
-		D9119BA9194E1F1000357B9F /* planeYellow2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "planeYellow2@2x.png"; sourceTree = "<group>"; };
-		D9119BAA194E1F1000357B9F /* planeYellow3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "planeYellow3@2x.png"; sourceTree = "<group>"; };
+		D9119BB7194E210400357B9F /* Planes.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Planes.atlas; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,7 +121,7 @@
 		D9119B67194E189B00357B9F /* Tappy Plane */ = {
 			isa = PBXGroup;
 			children = (
-				D9119B9E194E1F1000357B9F /* Planes */,
+				D9119BB7194E210400357B9F /* Planes.atlas */,
 				D9119B70194E189B00357B9F /* TPAppDelegate.h */,
 				D9119B71194E189B00357B9F /* TPAppDelegate.m */,
 				D9119B73194E189B00357B9F /* Main.storyboard */,
@@ -184,25 +162,6 @@
 				D9119B8E194E189C00357B9F /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		D9119B9E194E1F1000357B9F /* Planes */ = {
-			isa = PBXGroup;
-			children = (
-				D9119B9F194E1F1000357B9F /* planeBlue1@2x.png */,
-				D9119BA0194E1F1000357B9F /* planeBlue2@2x.png */,
-				D9119BA1194E1F1000357B9F /* planeBlue3@2x.png */,
-				D9119BA2194E1F1000357B9F /* planeGreen1@2x.png */,
-				D9119BA3194E1F1000357B9F /* planeGreen2@2x.png */,
-				D9119BA4194E1F1000357B9F /* planeGreen3@2x.png */,
-				D9119BA5194E1F1000357B9F /* planeRed1@2x.png */,
-				D9119BA6194E1F1000357B9F /* planeRed2@2x.png */,
-				D9119BA7194E1F1000357B9F /* planeRed3@2x.png */,
-				D9119BA8194E1F1000357B9F /* planeYellow1@2x.png */,
-				D9119BA9194E1F1000357B9F /* planeYellow2@2x.png */,
-				D9119BAA194E1F1000357B9F /* planeYellow3@2x.png */,
-			);
-			path = Planes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,19 +243,8 @@
 			files = (
 				D9119B6C194E189B00357B9F /* InfoPlist.strings in Resources */,
 				D9119B7F194E189B00357B9F /* Images.xcassets in Resources */,
-				D9119BB5194E1F1000357B9F /* planeYellow2@2x.png in Resources */,
-				D9119BAF194E1F1000357B9F /* planeGreen2@2x.png in Resources */,
+				D9119BB8194E210400357B9F /* Planes.atlas in Resources */,
 				D9119B75194E189B00357B9F /* Main.storyboard in Resources */,
-				D9119BAE194E1F1000357B9F /* planeGreen1@2x.png in Resources */,
-				D9119BB4194E1F1000357B9F /* planeYellow1@2x.png in Resources */,
-				D9119BB1194E1F1000357B9F /* planeRed1@2x.png in Resources */,
-				D9119BAD194E1F1000357B9F /* planeBlue3@2x.png in Resources */,
-				D9119BB2194E1F1000357B9F /* planeRed2@2x.png in Resources */,
-				D9119BB6194E1F1000357B9F /* planeYellow3@2x.png in Resources */,
-				D9119BAB194E1F1000357B9F /* planeBlue1@2x.png in Resources */,
-				D9119BAC194E1F1000357B9F /* planeBlue2@2x.png in Resources */,
-				D9119BB0194E1F1000357B9F /* planeGreen3@2x.png in Resources */,
-				D9119BB3194E1F1000357B9F /* planeRed3@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
