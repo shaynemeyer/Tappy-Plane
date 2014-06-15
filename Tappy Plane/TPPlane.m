@@ -8,6 +8,12 @@
 
 #import "TPPlane.h"
 
+@interface TPPlane ()
+
+@property (nonatomic) NSMutableArray *planeAnimations; // Holds animation actions.
+
+@end
+
 @implementation TPPlane
 
 - (id)init
@@ -15,8 +21,25 @@
     self = [super initWithImageNamed:@"planeBlue1@2x"];
     if (self) {
         
+        // Init array to hold animation actions.
+        _planeAnimations = [[NSMutableArray alloc] init];
+        
+        // Load animation plist file.
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"PlaneAnimations" ofType:@"plist"];
+        NSDictionary *animations = [NSDictionary dictionaryWithContentsOfFile:path];
+        for (NSString *key in animations) {
+            [self.planeAnimations addObject:[self animationFromArray:[animations objectForKey:key] withDuration:0.4]];
+        }
+        
+        [self setRandomColor];
+        
     }
     return self;
+}
+
+-(void)setRandomColor
+{
+    [self runAction:[self.planeAnimations objectAtIndex:arc4random_uniform(self.planeAnimations.count)]];
 }
 
 -(SKAction*)animationFromArray:(NSArray*)textureNames withDuration:(CGFloat)duration
