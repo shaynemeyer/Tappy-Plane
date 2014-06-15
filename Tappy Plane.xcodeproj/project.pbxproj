@@ -16,14 +16,13 @@
 		D9119B72194E189B00357B9F /* TPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D9119B71194E189B00357B9F /* TPAppDelegate.m */; };
 		D9119B75194E189B00357B9F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9119B73194E189B00357B9F /* Main.storyboard */; };
 		D9119B78194E189B00357B9F /* TPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9119B77194E189B00357B9F /* TPViewController.m */; };
-		D9119B7B194E189B00357B9F /* TPMyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = D9119B7A194E189B00357B9F /* TPMyScene.m */; };
-		D9119B7D194E189B00357B9F /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = D9119B7C194E189B00357B9F /* Spaceship.png */; };
 		D9119B7F194E189B00357B9F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9119B7E194E189B00357B9F /* Images.xcassets */; };
 		D9119B86194E189C00357B9F /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9119B85194E189C00357B9F /* XCTest.framework */; };
 		D9119B87194E189C00357B9F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9119B5F194E189B00357B9F /* Foundation.framework */; };
 		D9119B88194E189C00357B9F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9119B63194E189B00357B9F /* UIKit.framework */; };
 		D9119B90194E189C00357B9F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D9119B8E194E189C00357B9F /* InfoPlist.strings */; };
 		D9119B92194E189C00357B9F /* Tappy_PlaneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D9119B91194E189C00357B9F /* Tappy_PlaneTests.m */; };
+		D9119B9D194E18F000357B9F /* TPGameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = D9119B9C194E18F000357B9F /* TPGameScene.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,15 +50,14 @@
 		D9119B74194E189B00357B9F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D9119B76194E189B00357B9F /* TPViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TPViewController.h; sourceTree = "<group>"; };
 		D9119B77194E189B00357B9F /* TPViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TPViewController.m; sourceTree = "<group>"; };
-		D9119B79194E189B00357B9F /* TPMyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TPMyScene.h; sourceTree = "<group>"; };
-		D9119B7A194E189B00357B9F /* TPMyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TPMyScene.m; sourceTree = "<group>"; };
-		D9119B7C194E189B00357B9F /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
 		D9119B7E194E189B00357B9F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D9119B84194E189C00357B9F /* Tappy PlaneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tappy PlaneTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9119B85194E189C00357B9F /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		D9119B8D194E189C00357B9F /* Tappy PlaneTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tappy PlaneTests-Info.plist"; sourceTree = "<group>"; };
 		D9119B8F194E189C00357B9F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D9119B91194E189C00357B9F /* Tappy_PlaneTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tappy_PlaneTests.m; sourceTree = "<group>"; };
+		D9119B9B194E18F000357B9F /* TPGameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPGameScene.h; sourceTree = "<group>"; };
+		D9119B9C194E18F000357B9F /* TPGameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPGameScene.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,9 +124,8 @@
 				D9119B73194E189B00357B9F /* Main.storyboard */,
 				D9119B76194E189B00357B9F /* TPViewController.h */,
 				D9119B77194E189B00357B9F /* TPViewController.m */,
-				D9119B79194E189B00357B9F /* TPMyScene.h */,
-				D9119B7A194E189B00357B9F /* TPMyScene.m */,
-				D9119B7C194E189B00357B9F /* Spaceship.png */,
+				D9119B9B194E18F000357B9F /* TPGameScene.h */,
+				D9119B9C194E18F000357B9F /* TPGameScene.m */,
 				D9119B7E194E189B00357B9F /* Images.xcassets */,
 				D9119B68194E189B00357B9F /* Supporting Files */,
 			);
@@ -243,7 +240,6 @@
 			files = (
 				D9119B6C194E189B00357B9F /* InfoPlist.strings in Resources */,
 				D9119B7F194E189B00357B9F /* Images.xcassets in Resources */,
-				D9119B7D194E189B00357B9F /* Spaceship.png in Resources */,
 				D9119B75194E189B00357B9F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -265,8 +261,8 @@
 			files = (
 				D9119B78194E189B00357B9F /* TPViewController.m in Sources */,
 				D9119B72194E189B00357B9F /* TPAppDelegate.m in Sources */,
-				D9119B7B194E189B00357B9F /* TPMyScene.m in Sources */,
 				D9119B6E194E189B00357B9F /* main.m in Sources */,
+				D9119B9D194E18F000357B9F /* TPGameScene.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,28 +7,41 @@
 //
 
 #import "TPViewController.h"
-#import "TPMyScene.h"
+#import "TPGameScene.h"
 
 @implementation TPViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+}
 
+-(void)viewWillLayoutSubviews
+{
+    [super viewWillLayoutSubviews];
+    
     // Configure the view.
     SKView * skView = (SKView *)self.view;
-    skView.showsFPS = YES;
-    skView.showsNodeCount = YES;
-    
-    // Create and configure the scene.
-    SKScene * scene = [TPMyScene sceneWithSize:skView.bounds.size];
-    scene.scaleMode = SKSceneScaleModeAspectFill;
-    
-    // Present the scene.
-    [skView presentScene:scene];
+    if (!skView.scene) {
+        skView.showsFPS = YES;
+        skView.showsNodeCount = YES;
+        
+        // Create and configure the scene.
+        SKScene * scene = [TPGameScene sceneWithSize:skView.bounds.size];
+        scene.scaleMode = SKSceneScaleModeAspectFill;
+        
+        // Present the scene.
+        [skView presentScene:scene];
+    }
+
 }
 
 - (BOOL)shouldAutorotate
+{
+    return YES;
+}
+
+-(BOOL)prefersStatusBarHidden
 {
     return YES;
 }
