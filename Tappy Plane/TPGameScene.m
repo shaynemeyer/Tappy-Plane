@@ -35,6 +35,7 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
         
         // Setup physics.
         self.physicsWorld.gravity = CGVectorMake(0.0, -5.5);
+        self.physicsWorld.contactDelegate = self;
         
         // Setup world.
         _world = [SKNode node];
@@ -117,6 +118,16 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
     }
 }
 
+-(void)didBeginContact:(SKPhysicsContact *)contact
+{
+    if (contact.bodyA.categoryBitMask == kTPCategoryPlane) {
+        [self.player collide:contact.bodyB];
+    } else if (contact.bodyB.categoryBitMask == kTPCategoryPlane){
+        [self.player collide:contact.bodyA];
+    }
+        
+}
+
 -(void)update:(NSTimeInterval)currentTime
 {
     static NSTimeInterval lastCallTime;
@@ -127,8 +138,11 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
     lastCallTime = currentTime;
     
     [self.player update];
-    [self.background updateWithTimeElapsed:timeElapsed];
-    [self.foreground updateWithTimeElapsed:timeElapsed];
+    if (!self.player.crashed) {
+        [self.background updateWithTimeElapsed:timeElapsed];
+        [self.foreground updateWithTimeElapsed:timeElapsed];
+    }
+    
     
 }
 

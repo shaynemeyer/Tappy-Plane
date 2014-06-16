@@ -71,7 +71,7 @@ static NSString* const kKeyPlaneAnimation = @"PlaneAnimation";
 
 -(void)setEngineRunning:(BOOL)engineRunning
 {
-    _engineRunning = engineRunning;
+    _engineRunning = engineRunning && !self.crashed;
     if (engineRunning) {
         self.puffTrailEmitter.targetNode = self.parent;
         [self actionForKey:kKeyPlaneAnimation].speed = 1;
@@ -79,6 +79,20 @@ static NSString* const kKeyPlaneAnimation = @"PlaneAnimation";
     } else {
         [self actionForKey:kKeyPlaneAnimation].speed = 0;
         self.puffTrailEmitter.particleBirthRate = 0;
+    }
+}
+
+-(void)setAccelerating:(BOOL)accelerating
+{
+    _accelerating = accelerating && !self.crashed;
+}
+
+-(void)setCrashed:(BOOL)crashed
+{
+    _crashed = crashed;
+    if (crashed) {
+        self.engineRunning = NO;
+        self.accelerating = NO;
     }
 }
 
@@ -90,6 +104,17 @@ static NSString* const kKeyPlaneAnimation = @"PlaneAnimation";
     
     if (!self.engineRunning) {
         [self actionForKey:kKeyPlaneAnimation].speed = 0;
+    }
+}
+
+-(void)collide:(SKPhysicsBody*)body
+{
+    // Ignore collisions if already crashed.
+    if (!self.crashed) {
+        if (body.categoryBitMask == kTPCategoryGround) {
+            // Hit the ground.
+            self.crashed = YES;
+        }
     }
 }
 
