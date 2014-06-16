@@ -15,6 +15,7 @@
 @property (nonatomic) TPPlane *player;
 @property (nonatomic) SKNode *world;
 @property (nonatomic) TPScrollingLayer *background;
+@property (nonatomic) TPScrollingLayer *foreground;
 @end
 
 static const CGFloat kMinFPS = 10.0 / 60.0;
@@ -50,6 +51,15 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
         _background.scrolling = YES;
         [_world addChild: _background];
         
+        // Setup foreground.
+        _foreground = [[TPScrollingLayer alloc] initWithTiles:@[[self generateGroundTile],
+                                                                [self generateGroundTile],
+                                                                [self generateGroundTile]]];
+        _foreground.position = CGPointZero;
+        _foreground.horizontalScrollSpeed = -80;
+        _foreground.scrolling = YES;
+        [_world addChild:_foreground];
+        
         _player = [[TPPlane alloc] init];
         _player.position = CGPointMake(self.size.width * 0.5, self.size.height * 0.5);
         _player.physicsBody.affectedByGravity = NO;
@@ -58,6 +68,13 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
         _player.engineRunning = YES;
     }
     return self;
+}
+
+-(SKSpriteNode*)generateGroundTile
+{
+    // Get atlas file.
+    SKTextureAtlas *graphics = [SKTextureAtlas atlasNamed:@"Graphics"];
+    return [SKSpriteNode spriteNodeWithTexture:[graphics textureNamed:@"groundGrass"]];
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
@@ -87,6 +104,7 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
     
     [self.player update];
     [self.background updateWithTimeElapsed:timeElapsed];
+    [self.foreground updateWithTimeElapsed:timeElapsed];
     
 }
 
