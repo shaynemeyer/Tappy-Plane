@@ -30,6 +30,7 @@
 		D9119BC3194E354900357B9F /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = D9119BC1194E354900357B9F /* spark.png */; };
 		D9119BC6194E488F00357B9F /* TPScrollingNode.m in Sources */ = {isa = PBXBuildFile; fileRef = D9119BC5194E488F00357B9F /* TPScrollingNode.m */; };
 		D9119BC9194E4A4900357B9F /* TPScrollingLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = D9119BC8194E4A4900357B9F /* TPScrollingLayer.m */; };
+		D9353D5B194F21400005150F /* TPConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = D9353D5A194F21400005150F /* TPConstants.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,8 @@
 		D9119BC5194E488F00357B9F /* TPScrollingNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPScrollingNode.m; sourceTree = "<group>"; };
 		D9119BC7194E4A4900357B9F /* TPScrollingLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPScrollingLayer.h; sourceTree = "<group>"; };
 		D9119BC8194E4A4900357B9F /* TPScrollingLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPScrollingLayer.m; sourceTree = "<group>"; };
+		D9353D59194F21400005150F /* TPConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPConstants.h; sourceTree = "<group>"; };
+		D9353D5A194F21400005150F /* TPConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPConstants.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +142,8 @@
 				D9119BBF194E34FF00357B9F /* Particle Effects */,
 				D9119BBE194E262200357B9F /* Resources */,
 				D9119BB7194E210400357B9F /* Graphics.atlas */,
+				D9353D59194F21400005150F /* TPConstants.h */,
+				D9353D5A194F21400005150F /* TPConstants.m */,
 				D9119B70194E189B00357B9F /* TPAppDelegate.h */,
 				D9119B71194E189B00357B9F /* TPAppDelegate.m */,
 				D9119B73194E189B00357B9F /* Main.storyboard */,
@@ -307,6 +312,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9119B78194E189B00357B9F /* TPViewController.m in Sources */,
+				D9353D5B194F21400005150F /* TPConstants.m in Sources */,
 				D9119B72194E189B00357B9F /* TPAppDelegate.m in Sources */,
 				D9119B6E194E189B00357B9F /* main.m in Sources */,
 				D9119BBB194E22C700357B9F /* TPPlane.m in Sources */,
