@@ -74,7 +74,30 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
 {
     // Get atlas file.
     SKTextureAtlas *graphics = [SKTextureAtlas atlasNamed:@"Graphics"];
-    return [SKSpriteNode spriteNodeWithTexture:[graphics textureNamed:@"groundGrass"]];
+    SKSpriteNode *sprite = [SKSpriteNode spriteNodeWithTexture:[graphics textureNamed:@"groundGrass"]];
+    sprite.anchorPoint = CGPointZero;
+    
+    CGFloat offsetX = sprite.frame.size.width * sprite.anchorPoint.x;
+    CGFloat offsetY = sprite.frame.size.height * sprite.anchorPoint.y;
+    
+    CGMutablePathRef path = CGPathCreateMutable();
+    
+    CGPathMoveToPoint(path, NULL, 403 - offsetX, 16 - offsetY);
+    CGPathAddLineToPoint(path, NULL, 371 - offsetX, 35 - offsetY);
+    CGPathAddLineToPoint(path, NULL, 329 - offsetX, 32 - offsetY);
+    CGPathAddLineToPoint(path, NULL, 285 - offsetX, 8 - offsetY);
+    CGPathAddLineToPoint(path, NULL, 237 - offsetX, 12 - offsetY);
+    CGPathAddLineToPoint(path, NULL, 201 - offsetX, 28 - offsetY);
+    CGPathAddLineToPoint(path, NULL, 174 - offsetX, 20 - offsetY);
+    CGPathAddLineToPoint(path, NULL, 153 - offsetX, 21 - offsetY);
+    CGPathAddLineToPoint(path, NULL, 124 - offsetX, 32 - offsetY);
+    CGPathAddLineToPoint(path, NULL, 77 - offsetX, 30 - offsetY);
+    CGPathAddLineToPoint(path, NULL, 45 - offsetX, 11 - offsetY);
+    CGPathAddLineToPoint(path, NULL, 0 - offsetX, 16 - offsetY);
+    
+    sprite.physicsBody = [SKPhysicsBody bodyWithEdgeChainFromPath:path];
+    
+    return sprite;
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
