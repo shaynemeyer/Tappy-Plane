@@ -25,6 +25,9 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
 {
     if (self = [super initWithSize:size]) {
         
+        // Set background color to sky blue. Red = 213/255 = 0.8 Green = 237/255  Blue = 247/255
+        self.backgroundColor = [SKColor colorWithRed:0.835294118 green:0.929411765 blue:0.968627451 alpha:1.0];
+        
         // Get atlas file.
         SKTextureAtlas *graphics = [SKTextureAtlas atlasNamed:@"Graphics"];
         
