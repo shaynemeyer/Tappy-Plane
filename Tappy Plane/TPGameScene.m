@@ -48,7 +48,6 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
         }
         
         _background = [[TPScrollingLayer alloc] initWithTiles:backgroundTiles];
-        _background.position = CGPointZero;
         _background.horizontalScrollSpeed = -60;
         _background.scrolling = YES;
         [_world addChild: _background];
@@ -57,7 +56,6 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
         _foreground = [[TPScrollingLayer alloc] initWithTiles:@[[self generateGroundTile],
                                                                 [self generateGroundTile],
                                                                 [self generateGroundTile]]];
-        _foreground.position = CGPointZero;
         _foreground.horizontalScrollSpeed = -80;
         _foreground.scrolling = YES;
         [_world addChild:_foreground];
@@ -67,7 +65,9 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
         _player.physicsBody.affectedByGravity = NO;
         
         [_world addChild:_player];      
-        _player.engineRunning = YES;
+       
+        // Start a new game.
+        [self newGame];
     }
     return self;
 }
@@ -107,17 +107,13 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
     // Reset layers.
     self.foreground.position = CGPointZero;
     [self.foreground layoutTiles];
-    self.background.position = CGPointZero;
+    self.background.position = CGPointMake(0.0, 30);
     [self.background layoutTiles];
     
     // Reset plane.
     self.player.position = CGPointMake(self.size.width * 0.5, self.size.height * 0.5);
-    self.player.crashed = NO;
-    self.player.engineRunning = YES;
     self.player.physicsBody.affectedByGravity = NO;
-    self.player.physicsBody.velocity = CGVectorMake(0.0, 0.0);
-    self.player.zRotation = 0.0;
-    self.player.physicsBody.angularVelocity = 0.0;
+    [self.player reset];
     
 }
 
