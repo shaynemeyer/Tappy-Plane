@@ -15,6 +15,8 @@
 @end
 
 static const CGFloat kTPMarkerBuffer = 200.0;
+static NSString *const kTPKeyMountainUp = @"MountainUp";
+static NSString *const kTPKeyMountainDown = @"MountainDown";
 
 @implementation TPObstacleLayer
 
@@ -28,6 +30,7 @@ static const CGFloat kTPMarkerBuffer = 200.0;
         // When marker comes onto screen, add new obstacles.
         if (markerLocationInScene.x - (self.scene.size.width * self.scene.anchorPoint.x) < self.scene.size.width + kTPMarkerBuffer) {
             // if our marker is within 200 pixels from the right of the screen, add new obstacle.
+            [self addObstacleSet];
         }
     }
 }
@@ -35,6 +38,25 @@ static const CGFloat kTPMarkerBuffer = 200.0;
 -(void)addObstacleSet
 {
     
+}
+
+-(SKSpriteNode*)createObjectForKey:(NSString*)key
+{
+    SKSpriteNode *object = nil;
+    SKTextureAtlas *atlas = [SKTextureAtlas atlasNamed:@"Graphics"];
+    if (key == kTPKeyMountainUp) {
+        object = [SKSpriteNode spriteNodeWithTexture:[atlas textureNamed:@"MountainGrass"]];
+        [self addChild:object];
+    } else if (kTPKeyMountainDown) {
+        object = [SKSpriteNode spriteNodeWithTexture:[atlas textureNamed:@"MountainGrassDown"]];
+        [self addChild:object];
+    }
+    
+    if (object) {
+        object.name = key;
+    }
+    
+    return object;
 }
 
 @end
