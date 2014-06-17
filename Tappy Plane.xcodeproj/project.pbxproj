@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D9016735195073420013EA1A /* TPObstacleLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = D9016734195073420013EA1A /* TPObstacleLayer.m */; };
 		D9119B60194E189B00357B9F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9119B5F194E189B00357B9F /* Foundation.framework */; };
 		D9119B62194E189B00357B9F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9119B61194E189B00357B9F /* CoreGraphics.framework */; };
 		D9119B64194E189B00357B9F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9119B63194E189B00357B9F /* UIKit.framework */; };
@@ -44,6 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D9016733195073420013EA1A /* TPObstacleLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPObstacleLayer.h; sourceTree = "<group>"; };
+		D9016734195073420013EA1A /* TPObstacleLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPObstacleLayer.m; sourceTree = "<group>"; };
 		D9119B5C194E189B00357B9F /* Tappy Plane.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tappy Plane.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9119B5F194E189B00357B9F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D9119B61194E189B00357B9F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -151,6 +154,8 @@
 				D9119B77194E189B00357B9F /* TPViewController.m */,
 				D9119B9B194E18F000357B9F /* TPGameScene.h */,
 				D9119B9C194E18F000357B9F /* TPGameScene.m */,
+				D9016733195073420013EA1A /* TPObstacleLayer.h */,
+				D9016734195073420013EA1A /* TPObstacleLayer.m */,
 				D9119BB9194E22C700357B9F /* TPPlane.h */,
 				D9119BBA194E22C700357B9F /* TPPlane.m */,
 				D9119BC4194E488F00357B9F /* TPScrollingNode.h */,
@@ -312,6 +317,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9119B78194E189B00357B9F /* TPViewController.m in Sources */,
+				D9016735195073420013EA1A /* TPObstacleLayer.m in Sources */,
 				D9353D5B194F21400005150F /* TPConstants.m in Sources */,
 				D9119B72194E189B00357B9F /* TPAppDelegate.m in Sources */,
 				D9119B6E194E189B00357B9F /* main.m in Sources */,
