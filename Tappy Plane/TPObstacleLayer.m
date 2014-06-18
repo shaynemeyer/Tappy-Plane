@@ -16,6 +16,8 @@
 @end
 
 static const CGFloat kTPMarkerBuffer = 200.0;
+static const CGFloat kTPVerticalGap = 90.0;
+
 static NSString *const kTPKeyMountainUp = @"MountainUp";
 static NSString *const kTPKeyMountainDown = @"MountainDown";
 
@@ -38,7 +40,13 @@ static NSString *const kTPKeyMountainDown = @"MountainDown";
 
 -(void)addObstacleSet
 {
+    // Get mountain nodes.
+    SKSpriteNode *mountainUp = [self createObjectForKey:kTPKeyMountainUp];
+    SKSpriteNode *mountainDown = [self createObjectForKey:kTPKeyMountainDown];
     
+    // Position mountain nodes.
+    mountainUp.position = CGPointMake(self.marker, self.floor + (mountainUp.size.height * 0.5));
+    mountainDown.position = CGPointMake(self.marker, mountainUp.position.y + mountainDown.size.height + kTPVerticalGap);
 }
 
 -(SKSpriteNode*)createObjectForKey:(NSString*)key
