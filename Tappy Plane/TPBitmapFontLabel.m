@@ -47,7 +47,56 @@
 
 -(void)updateText
 {
+    // Rather than creating a new set of sprite nodes every time the text changes, we're going to attempt to reuse existing nodes that we've previously setup.
+    // Remove unused nodes.
+    if (self.text.length < self.children.count) {
+        for (NSUInteger i = self.children.count; i > self.text.length; i--) {
+            [[self.children objectAtIndex:i-1] removeFromParent];
+        }
+    }
     
+    // Setup a CGPoint that will be used to work out where the next letter should be positioned
+    CGPoint pos = CGPointZero;
+    // CGSize to keep track of the combined width of all of the characters we've added.
+    CGSize totalSize = CGSizeZero;
+    SKTextureAtlas *atlas = [SKTextureAtlas atlasNamed:@"Graphics"];
+    
+    // Loop through all characters in text.
+    for (NSUInteger i = 0; i < self.text.length; i++) {
+        // Get character in text for the current position in loop.
+        unichar c = [self.text characterAtIndex:i];
+        // Build texture name from character and font name.
+        // We build a NSString to match the name of the texture we'll use for that character.
+        // The name of the texture is the name of the font followed by the character we want
+        NSString *textureName = [NSString stringWithFormat:@"%@%C", self.fontName, c];
+        
+        SKSpriteNode *letter;
+        if (i < self.children.count) {
+            // Reuse an existing node.
+            letter = [self.children objectAtIndex:i];
+            letter.texture = [atlas textureNamed:textureName];
+            letter.size = letter.texture.size;
+        } else {
+            // Create a new letter node.
+            letter = [SKSpriteNode spriteNodeWithTexture:[atlas textureNamed:textureName]];
+            letter.anchorPoint = CGPointZero;
+            [self addChild:letter];
+        }
+        
+        letter.position = pos;
+        
+        pos.x += letter.size.width + self.letterSpacing;
+        totalSize.width = letter.size.width + self.letterSpacing;
+        if (totalSize.height < letter.size.height) {
+            totalSize.height = letter.size.height;
+        }
+        
+    }
+    
+    if (self.text.length > 0) {
+        // After we're done with laying out all the nodes, we update totalSize, to remove the extra letterSpacing we'd added on the way through.
+        totalSize.width -= self.letterSpacing;
+    }
 }
 
 @end
