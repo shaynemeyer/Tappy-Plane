@@ -12,4 +12,6 @@
 
 +(instancetype)getProvider;
 
+-(void)randomizeTileset;
+
 @end

@@ -12,6 +12,7 @@
 @interface TPTilesetTextureProvider ()
 
 @property (nonatomic) NSMutableDictionary *tilesets;
+@property (nonatomic) NSDictionary *currentTileset;
 
 @end
 
@@ -26,6 +27,23 @@
         }
         return provider;
     }
+}
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        [self loadTilesets];
+        [self randomizeTileset];
+    }
+    return self;
+}
+
+-(void)randomizeTileset
+{
+    NSArray *tilesetKeys = [self.tilesets allKeys];
+    NSString *key = [tilesetKeys objectAtIndex:arc4random_uniform((uint)tilesetKeys.count)];
+    self.currentTileset = [self.tilesets objectForKey:key];
 }
 
 -(void)loadTilesets
