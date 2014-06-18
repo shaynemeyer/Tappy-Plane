@@ -17,6 +17,7 @@
 
 static const CGFloat kTPMarkerBuffer = 200.0;
 static const CGFloat kTPVerticalGap = 90.0;
+static const CGFloat kTPSpaceBetweenObstacleSets = 180.0;
 
 static NSString *const kTPKeyMountainUp = @"MountainUp";
 static NSString *const kTPKeyMountainDown = @"MountainDown";
@@ -44,9 +45,16 @@ static NSString *const kTPKeyMountainDown = @"MountainDown";
     SKSpriteNode *mountainUp = [self createObjectForKey:kTPKeyMountainUp];
     SKSpriteNode *mountainDown = [self createObjectForKey:kTPKeyMountainDown];
     
+    // Calculate maximum variation.
+    CGFloat maxVariation = (mountainUp.size.height + mountainDown.size.height + kTPVerticalGap) - (self.ceiling - self.floor);
+    CGFloat yAdjustment = (CGFloat)arc4random_uniform(maxVariation);
+    
     // Position mountain nodes.
-    mountainUp.position = CGPointMake(self.marker, self.floor + (mountainUp.size.height * 0.5));
+    mountainUp.position = CGPointMake(self.marker, self.floor + (mountainUp.size.height * 0.5) - yAdjustment);
     mountainDown.position = CGPointMake(self.marker, mountainUp.position.y + mountainDown.size.height + kTPVerticalGap);
+    
+    // Reposition marker.
+    self.marker += kTPSpaceBetweenObstacleSets;
 }
 
 -(SKSpriteNode*)createObjectForKey:(NSString*)key
