@@ -97,6 +97,12 @@
         // After we're done with laying out all the nodes, we update totalSize, to remove the extra letterSpacing we'd added on the way through.
         totalSize.width -= self.letterSpacing;
     }
+    
+    // Center text.
+    CGPoint adjustment = CGPointMake(-totalSize.width * 0.5, -totalSize.height * 0.5);
+    for (SKNode *letter in self.children) {
+        letter.position = CGPointMake(letter.position.x + adjustment.x, letter.position.y + adjustment.y);
+    }
 }
 
 @end
