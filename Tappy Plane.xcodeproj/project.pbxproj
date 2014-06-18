@@ -32,6 +32,7 @@
 		D9119BC6194E488F00357B9F /* TPScrollingNode.m in Sources */ = {isa = PBXBuildFile; fileRef = D9119BC5194E488F00357B9F /* TPScrollingNode.m */; };
 		D9119BC9194E4A4900357B9F /* TPScrollingLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = D9119BC8194E4A4900357B9F /* TPScrollingLayer.m */; };
 		D9353D5B194F21400005150F /* TPConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = D9353D5A194F21400005150F /* TPConstants.m */; };
+		D9F23D6C195138EF002B8623 /* TPCollectable.m in Sources */ = {isa = PBXBuildFile; fileRef = D9F23D6B195138EF002B8623 /* TPCollectable.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,8 @@
 		D9119BC8194E4A4900357B9F /* TPScrollingLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPScrollingLayer.m; sourceTree = "<group>"; };
 		D9353D59194F21400005150F /* TPConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPConstants.h; sourceTree = "<group>"; };
 		D9353D5A194F21400005150F /* TPConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPConstants.m; sourceTree = "<group>"; };
+		D9F23D6A195138EF002B8623 /* TPCollectable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPCollectable.h; sourceTree = "<group>"; };
+		D9F23D6B195138EF002B8623 /* TPCollectable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPCollectable.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +161,8 @@
 				D9016734195073420013EA1A /* TPObstacleLayer.m */,
 				D9119BB9194E22C700357B9F /* TPPlane.h */,
 				D9119BBA194E22C700357B9F /* TPPlane.m */,
+				D9F23D6A195138EF002B8623 /* TPCollectable.h */,
+				D9F23D6B195138EF002B8623 /* TPCollectable.m */,
 				D9119BC4194E488F00357B9F /* TPScrollingNode.h */,
 				D9119BC5194E488F00357B9F /* TPScrollingNode.m */,
 				D9119BC7194E4A4900357B9F /* TPScrollingLayer.h */,
@@ -322,6 +327,7 @@
 				D9119B72194E189B00357B9F /* TPAppDelegate.m in Sources */,
 				D9119B6E194E189B00357B9F /* main.m in Sources */,
 				D9119BBB194E22C700357B9F /* TPPlane.m in Sources */,
+				D9F23D6C195138EF002B8623 /* TPCollectable.m in Sources */,
 				D9119B9D194E18F000357B9F /* TPGameScene.m in Sources */,
 				D9119BC9194E4A4900357B9F /* TPScrollingLayer.m in Sources */,
 				D9119BC6194E488F00357B9F /* TPScrollingNode.m in Sources */,
