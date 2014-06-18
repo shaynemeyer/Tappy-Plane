@@ -7,7 +7,10 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
+#import "TPCollectable.h"
 
-@interface TPGameScene : SKScene <SKPhysicsContactDelegate>
+@interface TPGameScene : SKScene <SKPhysicsContactDelegate, TPCollectableDelegate>
+
+
 
 @end
