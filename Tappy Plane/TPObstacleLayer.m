@@ -24,6 +24,19 @@ static NSString *const kTPKeyMountainDown = @"MountainDown";
 
 @implementation TPObstacleLayer
 
+-(void)reset
+{
+    // Loop through child nodes and reposition for reuse.
+    for (SKNode *node in self.children) {
+        node.position = CGPointMake(-1000, 0);
+    }
+    
+    // Reposition marker;
+    if (self.scene) {
+        self.marker = self.scene.size.width + kTPMarkerBuffer;
+    }
+}
+
 -(void)updateWithTimeElapsed:(NSTimeInterval)timeElapsed
 {
     [super updateWithTimeElapsed:timeElapsed];
