@@ -7,11 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <SpriteKit/SpriteKit.h>
 
 @interface TPTilesetTextureProvider : NSObject
 
 +(instancetype)getProvider;
 
 -(void)randomizeTileset;
+-(SKTexture*)getTextureForKey:(NSString*)key;
 
 @end
