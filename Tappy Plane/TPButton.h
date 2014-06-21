@@ -12,4 +12,6 @@
 
 @property (nonatomic) CGFloat pressedScale;
 
++(instancetype)spriteNodeWithTexture:(SKTexture *)texture;
+
 @end
