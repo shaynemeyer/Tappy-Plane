@@ -9,6 +9,7 @@
 #import "TPObstacleLayer.h"
 #import "TPConstants.h"
 #import "TPTilesetTextureProvider.h"
+#import "TPConstants.h"
 
 @interface TPObstacleLayer ()
 
@@ -21,10 +22,6 @@ static const CGFloat kTPVerticalGap = 90.0;
 static const CGFloat kTPSpaceBetweenObstacleSets = 180.0;
 static const int kTPCollectableVerticalRange = 200.0;
 static const CGFloat kTPCollectableClearance = 50.0;
-
-static NSString *const kTPKeyMountainUp = @"MountainUp";
-static NSString *const kTPKeyMountainDown = @"MountainDown";
-static NSString *const kTPKeyCollectableStar = @"CollectableStar";
 
 @implementation TPObstacleLayer
 
