@@ -33,6 +33,7 @@
 		D9119BC9194E4A4900357B9F /* TPScrollingLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = D9119BC8194E4A4900357B9F /* TPScrollingLayer.m */; };
 		D91B46C3195616E500947E00 /* TPChallengeProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D91B46C2195616E500947E00 /* TPChallengeProvider.m */; };
 		D9353D5B194F21400005150F /* TPConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = D9353D5A194F21400005150F /* TPConstants.m */; };
+		D954168819585E1C007C1FC5 /* TPGameOverMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = D954168719585E1C007C1FC5 /* TPGameOverMenu.m */; };
 		D9BAD6A11956429500077179 /* TPButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D9BAD6A01956429500077179 /* TPButton.m */; };
 		D9D6FAB71951BA630039D944 /* TilesetGraphics.plist in Resources */ = {isa = PBXBuildFile; fileRef = D9D6FAB61951BA630039D944 /* TilesetGraphics.plist */; };
 		D9D6FABA1951BC690039D944 /* TPTilesetTextureProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D9D6FAB91951BC690039D944 /* TPTilesetTextureProvider.m */; };
@@ -89,6 +90,8 @@
 		D91B46C2195616E500947E00 /* TPChallengeProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPChallengeProvider.m; sourceTree = "<group>"; };
 		D9353D59194F21400005150F /* TPConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPConstants.h; sourceTree = "<group>"; };
 		D9353D5A194F21400005150F /* TPConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPConstants.m; sourceTree = "<group>"; };
+		D954168619585E1C007C1FC5 /* TPGameOverMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPGameOverMenu.h; sourceTree = "<group>"; };
+		D954168719585E1C007C1FC5 /* TPGameOverMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPGameOverMenu.m; sourceTree = "<group>"; };
 		D9BAD69F1956429500077179 /* TPButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPButton.h; sourceTree = "<group>"; };
 		D9BAD6A01956429500077179 /* TPButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPButton.m; sourceTree = "<group>"; };
 		D9D6FAB61951BA630039D944 /* TilesetGraphics.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TilesetGraphics.plist; sourceTree = "<group>"; };
@@ -175,6 +178,8 @@
 				D9119B77194E189B00357B9F /* TPViewController.m */,
 				D9119B9B194E18F000357B9F /* TPGameScene.h */,
 				D9119B9C194E18F000357B9F /* TPGameScene.m */,
+				D954168619585E1C007C1FC5 /* TPGameOverMenu.h */,
+				D954168719585E1C007C1FC5 /* TPGameOverMenu.m */,
 				D9016733195073420013EA1A /* TPObstacleLayer.h */,
 				D9016734195073420013EA1A /* TPObstacleLayer.m */,
 				D9119BB9194E22C700357B9F /* TPPlane.h */,
@@ -359,6 +364,7 @@
 				D9F23D6F195140E3002B8623 /* TPBitmapFontLabel.m in Sources */,
 				D9119BC9194E4A4900357B9F /* TPScrollingLayer.m in Sources */,
 				D9119BC6194E488F00357B9F /* TPScrollingNode.m in Sources */,
+				D954168819585E1C007C1FC5 /* TPGameOverMenu.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
