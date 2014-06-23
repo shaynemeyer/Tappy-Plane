@@ -13,6 +13,7 @@
 #import "TPObstacleLayer.h"
 #import "TPBitmapFontLabel.h"
 #import "TPTilesetTextureProvider.h"
+#import "TPButton.h"
 
 @interface TPGameScene ()
 
@@ -84,6 +85,11 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
         _scoreLabel = [[TPBitmapFontLabel alloc] initWithText:@"0" andFontName:@"number"];
         _scoreLabel.position = CGPointMake(self.size.width * 0.5, self.size.height -100);
         [self addChild:_scoreLabel];
+        
+        // Setup test button.
+        TPButton *button = [TPButton spriteNodeWithTexture:[graphics textureNamed:@"buttonPlay"]];
+        button.position = CGPointMake(self.size.width * 0.5, self.size.height * 0.5);
+        [self addChild:button];
        
         // Start a new game.
         [self newGame];
