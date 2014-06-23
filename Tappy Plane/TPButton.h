@@ -10,8 +10,11 @@
 
 @interface TPButton : SKSpriteNode
 
+@property (nonatomic, readonly, weak) id pressedTarget;
+@property (nonatomic, readonly) SEL pressedAction;
 @property (nonatomic) CGFloat pressedScale;
 
 +(instancetype)spriteNodeWithTexture:(SKTexture *)texture;
+-(void)setPressedTarget:(id)pressedTarget withAction:(SEL)pressedAction;
 
 @end
