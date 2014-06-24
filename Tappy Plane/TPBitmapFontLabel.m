@@ -16,6 +16,7 @@
         _text = text;
         _fontName = fontName;
         _letterSpacing = 2.0;
+        _alignment = BitmapFontAlignmentCenter;
         [self updateText];
     }
     return self;
@@ -41,6 +42,14 @@
 {
     if (_letterSpacing != letterSpacing) {
         _letterSpacing = letterSpacing;
+        [self updateText];
+    }
+}
+
+-(void)setAlignment:(BitmapFontAlignment)alignment
+{
+    if (_alignment != alignment) {
+        _alignment = alignment;
         [self updateText];
     }
 }
@@ -98,8 +107,23 @@
         totalSize.width -= self.letterSpacing;
     }
     
-    // Center text.
-    CGPoint adjustment = CGPointMake(-totalSize.width * 0.5, -totalSize.height * 0.5);
+    // Set text alignment.
+    CGPoint adjustment;
+    
+    switch (self.alignment) {
+        case BitmapFontAlignmentLeft:
+            adjustment = CGPointMake(0.0, -totalSize.height * 0.5);
+            break;
+        case BitmapFontAlignmentCenter:
+            adjustment = CGPointMake(-totalSize.width * 0.5, -totalSize.height * 0.5);
+            break;
+        case BitmapFontAlignmentRight:
+            adjustment = CGPointMake(-totalSize.width, -totalSize.height * 0.5);
+            break;
+        default:
+            break;
+    }
+    
     for (SKNode *letter in self.children) {
         letter.position = CGPointMake(letter.position.x + adjustment.x, letter.position.y + adjustment.y);
     }
