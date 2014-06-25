@@ -96,7 +96,6 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
         
         // Setup game over menu.
         _gameOverMenu = [[TPGameOverMenu alloc] initWithSize:size];
-        [self addChild:_gameOverMenu];
        
         // Start a new game.
         [self newGame];
@@ -216,7 +215,19 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
     lastCallTime = currentTime;
     
     [self.player update];
-    if (!self.player.crashed) {
+    
+    if (self.gameState == GameRunning && self.player.crashed) {
+        // Player just crashed in the last frame so trigger game over.
+        self.gameState = GameOver;
+        // Fade out score display.
+        [self.scoreLabel runAction:[SKAction fadeOutWithDuration:0.4]];
+        // Show game over menu.
+        [self addChild:self.gameOverMenu];
+        [self.gameOverMenu show];
+        
+    }
+    
+    if (self.gameState != GameOver) {
         [self.background updateWithTimeElapsed:timeElapsed];
         [self.foreground updateWithTimeElapsed:timeElapsed];
         [self.obstacles updateWithTimeElapsed:timeElapsed];
