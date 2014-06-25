@@ -18,6 +18,7 @@
 
 @property (nonatomic) SKSpriteNode *gameOverTitle;
 @property (nonatomic) SKNode *panelGroup;
+@property (nonatomic) TPButton *playButton;
 
 @end
 
@@ -90,10 +91,10 @@
         [self.panelGroup addChild:_medalDisplay];
         
         // Setup play button.
-        TPButton *playButton = [TPButton spriteNodeWithTexture:[atlas textureNamed:@"buttonPlay"]];
-        playButton.position = CGPointMake(CGRectGetMidX(panelBackground.frame), CGRectGetMinY(panelBackground.frame) - 25);
-        [playButton setPressedTarget:self withAction:@selector(pressedPlayButton)];
-        [self addChild:playButton];
+        _playButton = [TPButton spriteNodeWithTexture:[atlas textureNamed:@"buttonPlay"]];
+        _playButton.position = CGPointMake(CGRectGetMidX(panelBackground.frame), CGRectGetMinY(panelBackground.frame) - 25);
+        [_playButton setPressedTarget:self withAction:@selector(pressedPlayButton)];
+        [self addChild:_playButton];
         
         // Set initial values.
         self.medal = MedalNone;
@@ -154,6 +155,15 @@
     self.panelGroup.alpha = 0.0;
     self.panelGroup.position = CGPointMake(self.panelGroup.position.x, self.panelGroup.position.y - 100);
     [self.panelGroup runAction:[SKAction sequence:@[[SKAction waitForDuration:0.7], raisePanel]]];
+    
+    // Animate play button.
+    SKAction *fadeInPlayButton = [SKAction sequence:@[[SKAction waitForDuration:1.2],
+                                                      [SKAction fadeInWithDuration:0.4]]];
+    self.playButton.alpha = 0.0;
+    self.playButton.userInteractionEnabled = NO;
+    [self.playButton runAction:fadeInPlayButton completion:^{
+        self.playButton.userInteractionEnabled = YES;
+    }];
 }
 
 @end
