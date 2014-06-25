@@ -13,7 +13,6 @@
 #import "TPObstacleLayer.h"
 #import "TPBitmapFontLabel.h"
 #import "TPTilesetTextureProvider.h"
-#import "TPGameOverMenu.h"
 
 typedef enum : NSUInteger {
     GameReady,
@@ -96,6 +95,7 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
         
         // Setup game over menu.
         _gameOverMenu = [[TPGameOverMenu alloc] initWithSize:size];
+        _gameOverMenu.delegate = self;
        
         // Start a new game.
         [self newGame];
@@ -133,6 +133,12 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
     return sprite;
 }
 
+-(void)pressedStartNewGameButton
+{
+    [self newGame];
+    [self.gameOverMenu removeFromParent];
+}
+
 -(void)newGame
 {
     // Randomize tileset.
@@ -154,6 +160,7 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
     
     // Reset score.
     self.score = 0;
+    self.scoreLabel.alpha = 1.0;
     
     // Reset plane.
     self.player.position = CGPointMake(self.size.width * 0.3, self.size.height * 0.5);
@@ -232,8 +239,6 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
         [self.foreground updateWithTimeElapsed:timeElapsed];
         [self.obstacles updateWithTimeElapsed:timeElapsed];
     }
-    
-    
 }
 
 @end
