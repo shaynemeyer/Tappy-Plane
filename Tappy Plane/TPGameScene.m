@@ -15,6 +15,12 @@
 #import "TPTilesetTextureProvider.h"
 #import "TPGameOverMenu.h"
 
+typedef enum : NSUInteger {
+    GameReady,
+    GameRunning,
+    GameOver,
+} GameState;
+
 @interface TPGameScene ()
 
 @property (nonatomic) TPPlane *player;
@@ -25,6 +31,7 @@
 @property (nonatomic) TPBitmapFontLabel *scoreLabel;
 @property (nonatomic) NSInteger score;
 @property (nonatomic) TPGameOverMenu *gameOverMenu;
+@property (nonatomic) GameState gameState;
 @end
 
 static const CGFloat kMinFPS = 10.0 / 60.0;
@@ -153,6 +160,9 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
     self.player.position = CGPointMake(self.size.width * 0.3, self.size.height * 0.5);
     self.player.physicsBody.affectedByGravity = NO;
     [self.player reset];
+    
+    // Set game state to ready.
+    self.gameState = GameReady;
 }
 
 -(void)wasCollected:(TPCollectable *)collectable
@@ -168,14 +178,22 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-        if (self.player.crashed) {
-            // Reset game.
-            [self newGame];
-        } else {
-            [_player flap];
-            _player.physicsBody.affectedByGravity = YES;
-            self.obstacles.scrolling = YES;
-        }
+    if (self.gameState == GameReady) {
+        self.player.physicsBody.affectedByGravity = YES;
+        self.obstacles.scrolling = YES;
+        self.gameState = GameRunning;
+    }
+    if (self.gameState == GameRunning) {
+        self.player.accelerating = YES;
+    }
+}
+
+-(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    if(self.gameState == GameRunning){
+        self.player.accelerating = NO;
+    }
+    
 }
 
 -(void)didBeginContact:(SKPhysicsContact *)contact
