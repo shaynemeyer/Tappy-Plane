@@ -64,11 +64,25 @@
 
 -(void)show
 {
-    
+    self.tapGroup.alpha = 1.0;
+    self.getReadyTitle.position = CGPointMake(self.size.width * 0.75, self.getReadyTitle.position.y);
 }
 
 -(void)hide
 {
+    // Create action to fade out tap group.
+    SKAction *fadeTapGroup = [SKAction fadeOutWithDuration:0.5];
+    [self.tapGroup runAction:fadeTapGroup];
+    
+    // Create actions to slide get ready text
+    SKAction *slideLeft = [SKAction moveByX:-30 y:0 duration:0.2];
+    slideLeft.timingMode = SKActionTimingEaseInEaseOut;
+    
+    SKAction *slideRight = [SKAction moveToX:self.size.width + (self.getReadyTitle.size.width * 0.5) duration:0.6];
+    slideRight.timingMode = SKActionTimingEaseIn;
+    
+    // Slide get ready text off to the right.
+    [self.getReadyTitle runAction:[SKAction sequence:@[slideLeft, slideRight]]];
     
 }
 
