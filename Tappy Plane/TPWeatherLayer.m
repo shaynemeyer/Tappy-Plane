@@ -36,4 +36,29 @@
     return self;
 }
 
+-(void)setConditions:(WeatherType)conditions
+{
+    if (_conditions != conditions) {
+        _conditions = conditions;
+        // Remove existing weather effect.
+        [self removeAllChildren];
+        
+        // Add weather conditions.
+        switch (conditions) {
+            case WeatherRaining:
+                [self addChild:self.rainEmitter];
+                // make the scene already be raining by advancing the simulation.
+                [self.rainEmitter advanceSimulationTime:5];
+                break;
+            case WeatherSnowing:
+                [self addChild:self.snowEmitter];
+                // make the scene already be snowing by advancing the simulation.
+                [self.snowEmitter advanceSimulationTime:5];
+                break;
+            default:
+                break;
+        }
+    }
+}
+
 @end
