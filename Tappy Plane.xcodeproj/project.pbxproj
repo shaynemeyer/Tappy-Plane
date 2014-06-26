@@ -36,6 +36,7 @@
 		D93AD8B9195CD2E400574BF3 /* SnowEffect.sks in Resources */ = {isa = PBXBuildFile; fileRef = D93AD8B8195CD2E400574BF3 /* SnowEffect.sks */; };
 		D93AD8BB195CD3B100574BF3 /* RainEffect.sks in Resources */ = {isa = PBXBuildFile; fileRef = D93AD8BA195CD3B100574BF3 /* RainEffect.sks */; };
 		D93AD8BE195CD4B000574BF3 /* TPWeatherLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = D93AD8BD195CD4B000574BF3 /* TPWeatherLayer.m */; };
+		D93AD8C1195CE64200574BF3 /* SoundManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D93AD8C0195CE64200574BF3 /* SoundManager.m */; };
 		D954168819585E1C007C1FC5 /* TPGameOverMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = D954168719585E1C007C1FC5 /* TPGameOverMenu.m */; };
 		D9BAD6A11956429500077179 /* TPButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D9BAD6A01956429500077179 /* TPButton.m */; };
 		D9CF62BC195C4FA100E2FE99 /* TPGetReadyMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = D9CF62BB195C4FA100E2FE99 /* TPGetReadyMenu.m */; };
@@ -98,6 +99,8 @@
 		D93AD8BA195CD3B100574BF3 /* RainEffect.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = RainEffect.sks; sourceTree = "<group>"; };
 		D93AD8BC195CD4B000574BF3 /* TPWeatherLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPWeatherLayer.h; sourceTree = "<group>"; };
 		D93AD8BD195CD4B000574BF3 /* TPWeatherLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPWeatherLayer.m; sourceTree = "<group>"; };
+		D93AD8BF195CE64200574BF3 /* SoundManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundManager.h; sourceTree = "<group>"; };
+		D93AD8C0195CE64200574BF3 /* SoundManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundManager.m; sourceTree = "<group>"; };
 		D954168619585E1C007C1FC5 /* TPGameOverMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPGameOverMenu.h; sourceTree = "<group>"; };
 		D954168719585E1C007C1FC5 /* TPGameOverMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPGameOverMenu.m; sourceTree = "<group>"; };
 		D9BAD69F1956429500077179 /* TPButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPButton.h; sourceTree = "<group>"; };
@@ -208,6 +211,8 @@
 				D954168719585E1C007C1FC5 /* TPGameOverMenu.m */,
 				D9CF62BA195C4FA100E2FE99 /* TPGetReadyMenu.h */,
 				D9CF62BB195C4FA100E2FE99 /* TPGetReadyMenu.m */,
+				D93AD8BF195CE64200574BF3 /* SoundManager.h */,
+				D93AD8C0195CE64200574BF3 /* SoundManager.m */,
 				D9119B7E194E189B00357B9F /* Images.xcassets */,
 				D9119B68194E189B00357B9F /* Supporting Files */,
 			);
@@ -383,6 +388,7 @@
 				D93AD8BE195CD4B000574BF3 /* TPWeatherLayer.m in Sources */,
 				D9F23D6F195140E3002B8623 /* TPBitmapFontLabel.m in Sources */,
 				D9119BC9194E4A4900357B9F /* TPScrollingLayer.m in Sources */,
+				D93AD8C1195CE64200574BF3 /* SoundManager.m in Sources */,
 				D9119BC6194E488F00357B9F /* TPScrollingNode.m in Sources */,
 				D954168819585E1C007C1FC5 /* TPGameOverMenu.m in Sources */,
 			);
