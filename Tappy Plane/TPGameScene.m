@@ -35,6 +35,7 @@ typedef enum : NSUInteger {
 @end
 
 static const CGFloat kMinFPS = 10.0 / 60.0;
+static NSString *const kTPKeyBestScore = @"BestScore";
 
 @implementation TPGameScene
 
@@ -93,6 +94,9 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
         _scoreLabel = [[TPBitmapFontLabel alloc] initWithText:@"0" andFontName:@"number"];
         _scoreLabel.position = CGPointMake(self.size.width * 0.5, self.size.height -100);
         [self addChild:_scoreLabel];
+        
+        // Load best score.
+        self.bestScore = [[NSUserDefaults standardUserDefaults] integerForKey:kTPKeyBestScore];
         
         // Setup game over menu.
         _gameOverMenu = [[TPGameOverMenu alloc] initWithSize:size];
@@ -172,6 +176,27 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
     self.gameState = GameReady;
 }
 
+-(void)gameOver
+{
+    // Update game state.
+    self.gameState = GameOver;
+    // Fade out score display.
+    [self.scoreLabel runAction:[SKAction fadeOutWithDuration:0.4]];
+    // Set properties on game over menu.
+    self.gameOverMenu.score = self.score;
+    self.gameOverMenu.medal = [self getMedalForCurrentScore];
+    // Update best score.
+    if (self.score > self.bestScore) {
+        self.bestScore = self.score;
+        [[NSUserDefaults standardUserDefaults] setInteger:self.bestScore forKey:kTPKeyBestScore];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
+    self.gameOverMenu.bestScore = self.bestScore;
+    // Show game over menu.
+    [self addChild:self.gameOverMenu];
+    [self.gameOverMenu show];
+}
+
 -(void)wasCollected:(TPCollectable *)collectable
 {
     self.score += collectable.pointValue;
@@ -226,19 +251,7 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
     
     if (self.gameState == GameRunning && self.player.crashed) {
         // Player just crashed in the last frame so trigger game over.
-        self.gameState = GameOver;
-        // Fade out score display.
-        [self.scoreLabel runAction:[SKAction fadeOutWithDuration:0.4]];
-        // Show game over menu.
-        self.gameOverMenu.score = self.score;
-        self.gameOverMenu.medal = [self getMedalForCurrentScore];
-        if (self.score > self.bestScore) {
-            self.bestScore = self.score;
-        }
-        self.gameOverMenu.bestScore = self.bestScore;
-        [self addChild:self.gameOverMenu];
-        [self.gameOverMenu show];
-        
+        [self gameOver];
     }
     
     if (self.gameState != GameOver) {
