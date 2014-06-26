@@ -29,6 +29,7 @@ typedef enum : NSUInteger {
 @property (nonatomic) TPObstacleLayer *obstacles;
 @property (nonatomic) TPBitmapFontLabel *scoreLabel;
 @property (nonatomic) NSInteger score;
+@property (nonatomic) NSInteger bestScore;
 @property (nonatomic) TPGameOverMenu *gameOverMenu;
 @property (nonatomic) GameState gameState;
 @end
@@ -229,6 +230,12 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
         // Fade out score display.
         [self.scoreLabel runAction:[SKAction fadeOutWithDuration:0.4]];
         // Show game over menu.
+        self.gameOverMenu.score = self.score;
+        self.gameOverMenu.medal = [self getMedalForCurrentScore];
+        if (self.score > self.bestScore) {
+            self.bestScore = self.score;
+        }
+        self.gameOverMenu.bestScore = self.bestScore;
         [self addChild:self.gameOverMenu];
         [self.gameOverMenu show];
         
@@ -239,6 +246,19 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
         [self.foreground updateWithTimeElapsed:timeElapsed];
         [self.obstacles updateWithTimeElapsed:timeElapsed];
     }
+}
+
+-(MedalType)getMedalForCurrentScore
+{
+    NSInteger adjustedScore = self.score - (self.bestScore / 5);
+    if (adjustedScore >= 45) {
+        return MedalGold;
+    } else if (adjustedScore >= 25){
+        return MedalSilver;
+    } else if (adjustedScore >= 10) {
+        return MedalBronze;
+    }
+    return MedalNone;
 }
 
 @end
