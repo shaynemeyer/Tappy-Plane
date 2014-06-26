@@ -13,6 +13,7 @@
 #import "TPObstacleLayer.h"
 #import "TPBitmapFontLabel.h"
 #import "TPTilesetTextureProvider.h"
+#import "TPGetReadyMenu.h"
 
 typedef enum : NSUInteger {
     GameReady,
@@ -31,6 +32,7 @@ typedef enum : NSUInteger {
 @property (nonatomic) NSInteger score;
 @property (nonatomic) NSInteger bestScore;
 @property (nonatomic) TPGameOverMenu *gameOverMenu;
+@property (nonatomic) TPGetReadyMenu *getReadyMenu;
 @property (nonatomic) GameState gameState;
 @end
 
@@ -102,6 +104,10 @@ static NSString *const kTPKeyBestScore = @"BestScore";
         _gameOverMenu = [[TPGameOverMenu alloc] initWithSize:size];
         _gameOverMenu.delegate = self;
        
+        // Setup get ready menu.
+        _getReadyMenu = [[TPGetReadyMenu alloc] initWithSize:size andPlanePosition:CGPointMake(self.size.width * 0.3, self.size.height * 0.5)];
+        [self addChild:_getReadyMenu];
+        
         // Start a new game.
         [self newGame];
     }
