@@ -33,6 +33,7 @@
 		D9119BC9194E4A4900357B9F /* TPScrollingLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = D9119BC8194E4A4900357B9F /* TPScrollingLayer.m */; };
 		D91B46C3195616E500947E00 /* TPChallengeProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D91B46C2195616E500947E00 /* TPChallengeProvider.m */; };
 		D9353D5B194F21400005150F /* TPConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = D9353D5A194F21400005150F /* TPConstants.m */; };
+		D93AD8B9195CD2E400574BF3 /* SnowEffect.sks in Resources */ = {isa = PBXBuildFile; fileRef = D93AD8B8195CD2E400574BF3 /* SnowEffect.sks */; };
 		D954168819585E1C007C1FC5 /* TPGameOverMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = D954168719585E1C007C1FC5 /* TPGameOverMenu.m */; };
 		D9BAD6A11956429500077179 /* TPButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D9BAD6A01956429500077179 /* TPButton.m */; };
 		D9CF62BC195C4FA100E2FE99 /* TPGetReadyMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = D9CF62BB195C4FA100E2FE99 /* TPGetReadyMenu.m */; };
@@ -91,6 +92,7 @@
 		D91B46C2195616E500947E00 /* TPChallengeProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPChallengeProvider.m; sourceTree = "<group>"; };
 		D9353D59194F21400005150F /* TPConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPConstants.h; sourceTree = "<group>"; };
 		D9353D5A194F21400005150F /* TPConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPConstants.m; sourceTree = "<group>"; };
+		D93AD8B8195CD2E400574BF3 /* SnowEffect.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SnowEffect.sks; sourceTree = "<group>"; };
 		D954168619585E1C007C1FC5 /* TPGameOverMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPGameOverMenu.h; sourceTree = "<group>"; };
 		D954168719585E1C007C1FC5 /* TPGameOverMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPGameOverMenu.m; sourceTree = "<group>"; };
 		D9BAD69F1956429500077179 /* TPButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPButton.h; sourceTree = "<group>"; };
@@ -248,6 +250,7 @@
 			children = (
 				D9119BC0194E354900357B9F /* PlanePuffTrail.sks */,
 				D9119BC1194E354900357B9F /* spark.png */,
+				D93AD8B8195CD2E400574BF3 /* SnowEffect.sks */,
 			);
 			name = "Particle Effects";
 			sourceTree = "<group>";
@@ -333,6 +336,7 @@
 				D9119BBD194E245D00357B9F /* PlaneAnimations.plist in Resources */,
 				D9D6FAB71951BA630039D944 /* TilesetGraphics.plist in Resources */,
 				D9119BC2194E354900357B9F /* PlanePuffTrail.sks in Resources */,
+				D93AD8B9195CD2E400574BF3 /* SnowEffect.sks in Resources */,
 				D9119BC3194E354900357B9F /* spark.png in Resources */,
 				D9119B7F194E189B00357B9F /* Images.xcassets in Resources */,
 				D9119BB8194E210400357B9F /* Graphics.atlas in Resources */,
